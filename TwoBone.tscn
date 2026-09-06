@@ -1,0 +1,106 @@
+[gd_scene format=4 uid="uid://cdqs5d61klnrw"]
+
+[ext_resource type="Script" uid="uid://biojooukkp0wk" path="res://skeleDebug.cs" id="1_wq5cj"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_wq5cj"]
+cull_mode = 2
+no_depth_test = true
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lkc4u"]
+_surfaces = [{
+"aabb": AABB(-0.078000054, -0.063423045, -0.081966646, 0.15600005, 3.9885461, 0.16613072),
+"attribute_data": PackedByteArray("f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//gH5+/4B+fv+Afn7/gH5+/4B+fv+Afn7/gH5+/4B+fv+Afn7/gH5+/4B+fv+Afn7/gH5+/4B+fv+Afn7/gH5+/4B+fv+Afn7/gH5+/4B+fv+Afn7/gH5+/4B+fv+Afn7/"),
+"format": 34359738377,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAADc1e0ApyAU8d76fPUZ+YkDCBMo7MO8pJKd3YkA3Xqw9AAAAADc1e0ApyAU8MO8pJOWEYkCfHZO9d76fPUZ+YkDCBMo7AAAAADc1e0ApyAU8d76fvUZ+YkDCBMo7MO8pJOWEYkCfHZO9AAAAADc1e0ApyAU8MO8pJKd3YkA3Xqw9d76fvUZ+YkDCBMo7/GpUJQlF/z/7pfC6MO8pJKd3YkA3Xqw9d76fPUZ+YkDCBMo7/GpUJQlF/z/7pfC6d76fPUZ+YkDCBMo7MO8pJOWEYkCfHZO9/GpUJQlF/z/7pfC6MO8pJOWEYkCfHZO9d76fvUZ+YkDCBMo7/GpUJQlF/z/7pfC6d76fvUZ+YkDCBMo7MO8pJKd3YkA3Xqw9/GpUJQlF/z/7pfC6cL6fPZSXyj9bA4K7t7VSs1eKyj+1nZc9/GpUJQlF/z/7pfC6t7VSs9Gkyj8h3qe9cL6fPZSXyj9bA4K7/GpUJQlF/z/7pfC6fr6fvZSXyj9bA4K7t7VSs9Gkyj8h3qe9/GpUJQlF/z/7pfC6t7VSs1eKyj+1nZc9fr6fvZSXyj9bA4K7krGDtPHjgb1ktUy8t7VSs1eKyj+1nZc9cL6fPZSXyj9bA4K7krGDtPHjgb1ktUy8cL6fPZSXyj9bA4K7t7VSs9Gkyj8h3qe9krGDtPHjgb1ktUy8t7VSs9Gkyj8h3qe9fr6fvZSXyj9bA4K7krGDtPHjgb1ktUy8fr6fvZSXyj9bA4K7t7VSs1eKyj+1nZc9")
+}]
+
+[sub_resource type="BoxMesh" id="BoxMesh_81qoi"]
+size = Vector3(1, 4.323303, 1)
+
+[node name="Node3D" type="Node3D" unique_id=239961144]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="." unique_id=1460921710]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0, 0)
+bones/0/name = "Bone"
+bones/0/parent = -1
+bones/0/rest = Transform3D(0, 1.788139e-07, -0.9999999, 0.99999994, 1.1920927e-07, 5.9604638e-08, 1.7881392e-07, -0.9999998, -2.3841855e-07, 0, -8.1655715e-05, 0.03925124)
+bones/0/enabled = true
+bones/0/position = Vector3(0, -8.1655715e-05, 0.03925124)
+bones/0/rotation = Quaternion(-0.5, -0.5000001, 0.4999999, 0.5)
+bones/0/scale = Vector3(0.99999994, 0.9999998, 0.9999999)
+bones/1/name = "Bone.001"
+bones/1/parent = 0
+bones/1/rest = Transform3D(0.9999685, 0.007936259, -3.1471474e-05, -0.007936258, 0.99996865, 2.4822828e-07, 3.1472457e-05, 1.5453028e-09, 1, -9.831069e-12, 0.019308556, -1.8424321e-18)
+bones/1/enabled = true
+bones/1/position = Vector3(-9.831069e-12, 0.019308556, -1.8424321e-18)
+bones/1/rotation = Quaternion(-6.167123e-08, -1.5736106e-05, -0.00396816, 0.99999213)
+bones/1/scale = Vector3(1, 1.0000001, 1)
+bones/2/name = "Bone.001_end"
+bones/2/parent = 1
+bones/2/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.020577457, 0)
+bones/2/enabled = true
+bones/2/position = Vector3(0, 0.020577457, 0)
+bones/2/rotation = Quaternion(0, 0, 0, 1)
+bones/2/scale = Vector3(1, 1, 1)
+
+[node name="JacobianIK3D" type="TwoBoneIK3D" parent="Skeleton3D" unique_id=632606479]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 3.5527137e-15, 0, -3.5527137e-15, 1.0000002, 0, 0, 0)
+setting_count = 1
+settings/0/target_node = NodePath("../../Target")
+settings/0/pole_node = NodePath("../../Pole")
+settings/0/root_bone_name = "Bone"
+settings/0/root_bone = 0
+settings/0/middle_bone_name = "Bone.001"
+settings/0/middle_bone = 1
+settings/0/pole_direction = 0
+settings/0/end_bone_name = "Bone.001_end"
+settings/0/end_bone = 2
+settings/0/use_virtual_end = false
+settings/0/extend_end_bone = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D" unique_id=461665013 node_paths=PackedStringArray("TargetSkeleton")]
+transform = Transform3D(0.010000002, 0, 0, 0, -4.3711396e-10, -0.010000003, 0, 0.010000003, -4.3711396e-10, 0, 0, 0)
+material_override = SubResource("ORMMaterial3D_wq5cj")
+custom_aabb = AABB(-2.0000002, -2.0634232, -2.0124943, 4.0000005, 7.9885464, 4.02066)
+mesh = SubResource("ArrayMesh_lkc4u")
+script = ExtResource("1_wq5cj")
+TargetSkeleton = NodePath("..")
+BoneBaseWidth = 0.078
+
+[node name="Target" type="Node3D" parent="." unique_id=506264446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06347716, -0.012494624)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="." unique_id=550427600]
+transform = Transform3D(0, 0, -99.999985, 0.5179808, -99.998634, 0, -99.99864, -0.5179778, 0, 0, 3.925124, 0.0081654)
+visible = false
+bone_name = "Bone"
+bone_idx = 0
+use_external_skeleton = true
+external_skeleton = NodePath("../Skeleton3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BoneAttachment3D" unique_id=760666231]
+transform = Transform3D(0.005, 0, 5.624828e-22, -4.440892e-16, 0.005, -1.0145702e-23, -1.0587912e-22, 4.5193308e-23, 0.005, 7.275958e-12, 0.008308258, 0)
+mesh = SubResource("BoxMesh_81qoi")
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="." unique_id=255975978]
+transform = Transform3D(-0.003141164, -1.1920741e-05, -99.999985, 0.5179689, -99.99864, -4.3496757e-06, -99.99864, -0.5179659, 0.0031411839, 1.8424319e-16, 1.9942948, -0.0018360018)
+visible = false
+bone_name = "Bone.001"
+bone_idx = 1
+use_external_skeleton = true
+external_skeleton = NodePath("../Skeleton3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BoneAttachment3D2" unique_id=1822751369]
+transform = Transform3D(0.0050145434, -3.637979e-12, 1.4210855e-14, 7.275958e-12, 0.0031675743, 1.110223e-16, 2.842171e-14, -1.6653345e-16, 0.004999999, -1.0669653e-05, 0.009652601, 6.5424643e-10)
+mesh = SubResource("BoxMesh_81qoi")
+
+[node name="Pole" type="Node3D" parent="." unique_id=1412128678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.74, -8.196)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1962635862]
+transform = Transform3D(-0.25782737, 0.19011664, -0.9473018, 0.049927883, 0.9817615, 0.18344358, 0.96490014, 0, -0.2626171, -7.06545, 4.609672, -1.5115867)

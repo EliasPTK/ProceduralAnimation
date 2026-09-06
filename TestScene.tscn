@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dtmvf3gvqt260"]
+
+[ext_resource type="Script" uid="uid://bfb5d1nget6rx" path="res://fabrik_tester.gd" id="1_mncer"]
+
+[node name="Node3D" type="Node3D" unique_id=1519805860]
+
+[node name="FabrikTester" type="Node3D" parent="." unique_id=1804813232]
+script = ExtResource("1_mncer")

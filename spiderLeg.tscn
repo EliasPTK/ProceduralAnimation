@@ -1,0 +1,84 @@
+[gd_scene format=4 uid="uid://clfuk31843k2d"]
+
+[ext_resource type="Script" uid="uid://cuw3s60gb1agb" path="res://Fabriklegchain.cs" id="1_bnopv"]
+[ext_resource type="Script" uid="uid://biojooukkp0wk" path="res://skeleDebug.cs" id="2_c75xg"]
+[ext_resource type="Script" uid="uid://cfycx40x11t7e" path="res://pole_position.gd" id="3_yvvqh"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_yvvqh"]
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m1ser"]
+_surfaces = [{
+"aabb": AABB(-0.07799997, 1.9633583, 0.0081654, 0.15600023, 2.945211, 3.834737),
+"attribute_data": PackedByteArray("/xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn/zz8//88/P//PPz//zz8//88/P//PPz//zz8//88/P//PPz//zz8//88/P//PPz//zz8//88/P//PPz//zz8//88/P//PPz//zz8//88/P//PPz//zz8//88/P//PPz//zEFB/8xBQf/MQUH/zEFB/8xBQf/MQUH/zEFB/8xBQf/MQUH/zEFB/8xBQf/MQUH/zEFB/8xBQf/MQUH/zEFB/8xBQf/MQUH/zEFB/8xBQf/MQUH/zEFB/8xBQf/MQUH/"),
+"format": 34359738377,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("XuPIqDk1e0AryAU8DZLHMsYLhkDb/Zk+c76fveTlg0ARVa4+XuPIqDk1e0AryAU8e76fPeTlg0ARVa4+DZLHMsYLhkDb/Zk+XuPIqDk1e0AryAU8ocP9MgLAgUBHrMI+e76fPeTlg0ARVa4+XuPIqDk1e0AryAU8c76fveTlg0ARVa4+ocP9MgLAgUBHrMI+zKoNNAATnUAUvNU/c76fveTlg0ARVa4+DZLHMsYLhkDb/Zk+zKoNNAATnUAUvNU/DZLHMsYLhkDb/Zk+e76fPeTlg0ARVa4+zKoNNAATnUAUvNU/e76fPeTlg0ARVa4+ocP9MgLAgUBHrMI+zKoNNAATnUAUvNU/ocP9MgLAgUBHrMI+c76fveTlg0ARVa4+zKoNNAATnUAUvNU/iw4pNPV1mUDRrgRAYr6fvXo5l0AsdwJAzKoNNAATnUAUvNU/jL6fPXo5l0AsdwJAiw4pNPV1mUDRrgRAzKoNNAATnUAUvNU/B1okNP/8lECHPwBAjL6fPXo5l0AsdwJAzKoNNAATnUAUvNU/Yr6fvXo5l0AsdwJAB1okNP/8lECHPwBAHm2FNMOmf0C122BAYr6fvXo5l0AsdwJAiw4pNPV1mUDRrgRAHm2FNMOmf0C122BAiw4pNPV1mUDRrgRAjL6fPXo5l0AsdwJAHm2FNMOmf0C122BAjL6fPXo5l0AsdwJAB1okNP/8lECHPwBAHm2FNMOmf0C122BAB1okNP/8lECHPwBAYr6fvXo5l0AsdwJAHm2FNMOmf0C122BANGyDNJJzZkDZAGpAVr6fvfGmZUBjE2VAHm2FNMOmf0C122BAmL6fPfGmZUBjE2VANGyDNJJzZkDZAGpAHm2FNMOmf0C122BA8pSFNFDaZEDtJWBAmL6fPfGmZUBjE2VAHm2FNMOmf0C122BAVr6fvfGmZUBjE2VA8pSFNFDaZEDtJWBAZc6ANFNP+z8d8nVAVr6fvfGmZUBjE2VANGyDNJJzZkDZAGpAZc6ANFNP+z8d8nVANGyDNJJzZkDZAGpAmL6fPfGmZUBjE2VAZc6ANFNP+z8d8nVAmL6fPfGmZUBjE2VA8pSFNFDaZEDtJWBAZc6ANFNP+z8d8nVA8pSFNFDaZEDtJWBAVr6fvfGmZUBjE2VA")
+}]
+
+[node name="Node3D" type="Node3D" unique_id=2124933044]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="." unique_id=408056374]
+transform = Transform3D(100.000015, 0, 0, 0, -4.3711393e-06, 100.00001, 0, -100.00001, -4.3711393e-06, 0, 0, 0)
+bones/0/name = "Leg1"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1.1920929e-07, 1.1920928e-07, -1, 1, 2.3841856e-07, 1.1920929e-07, 2.3841858e-07, -0.99999994, -1.1920929e-07, -2.230307e-16, -8.165573e-05, 0.039251246)
+bones/0/enabled = true
+bones/0/position = Vector3(-2.230307e-16, -8.165573e-05, 0.039251246)
+bones/0/rotation = Quaternion(-0.5, -0.50000006, 0.49999988, 0.50000006)
+bones/0/scale = Vector3(1, 0.99999994, 1)
+bones/1/name = "Leg2"
+bones/1/parent = 0
+bones/1/rest = Transform3D(0.9999685, 0.007936257, -3.1471696e-05, -0.007936256, 0.99996865, 2.47883e-07, 3.147267e-05, 1.8922182e-09, 1, 1.7176147e-12, 0.019308556, 7.227552e-16)
+bones/1/enabled = true
+bones/1/position = Vector3(1.7176147e-12, 0.019308556, 7.227552e-16)
+bones/1/rotation = Quaternion(-6.149817e-08, -1.5736216e-05, -0.003968159, 0.99999213)
+bones/1/scale = Vector3(1, 1.0000001, 1)
+bones/2/name = "Leg3"
+bones/2/parent = 1
+bones/2/rest = Transform3D(1, 1.8617129e-09, 6.804335e-12, -1.8617129e-09, 1, 1.4210849e-14, -6.804335e-12, -1.4210861e-14, 1, -4.2776707e-12, 0.020577457, 6.217249e-16)
+bones/2/enabled = true
+bones/2/position = Vector3(-4.2776707e-12, 0.020577457, 6.217249e-16)
+bones/2/rotation = Quaternion(-7.1054274e-15, 3.4021674e-12, -9.3085645e-10, 1)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/name = "Leg3_end"
+bones/3/parent = 2
+bones/3/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.020577459, 0)
+bones/3/enabled = true
+bones/3/position = Vector3(0, 0.020577459, 0)
+bones/3/rotation = Quaternion(0, 0, 0, 1)
+bones/3/scale = Vector3(1, 1, 1)
+
+[node name="SpiderLegIK" type="Node3D" parent="Skeleton3D" unique_id=421388563 node_paths=PackedStringArray("pole")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 3.5527137e-15, 0, -3.5527137e-15, 1.0000001, 0, 0, 0)
+script = ExtResource("1_bnopv")
+SkeletonPath = NodePath("..")
+BoneNames = PackedStringArray("Leg1", "Leg2", "Leg3", "Leg3_end")
+TargetPath = NodePath("../../Target")
+pole = NodePath("../../Pole")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D" unique_id=2127408353 node_paths=PackedStringArray("TargetSkeleton")]
+transform = Transform3D(0.010000002, 0, 0, 0, -4.3711396e-10, -0.010000003, 0, 0.010000003, -4.3711396e-10, 0, 0, 0)
+material_override = SubResource("ORMMaterial3D_yvvqh")
+custom_aabb = AABB(-2, -2, -2, 4.0000005, 8.908569, 7.842902)
+mesh = SubResource("ArrayMesh_m1ser")
+script = ExtResource("2_c75xg")
+TargetSkeleton = NodePath("..")
+BoneBaseWidth = 0.078
+
+[node name="Root" type="Node3D" parent="Skeleton3D" unique_id=60937704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.259559e-06, 0.039414674)
+
+[node name="Target" type="Node3D" parent="." unique_id=320828973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 1.9764068, 3.86896)
+
+[node name="Pole" type="Node3D" parent="." unique_id=1988305380 node_paths=PackedStringArray("targetPos", "rootPos")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 8.941467, 3.86896)
+script = ExtResource("3_yvvqh")
+targetPos = NodePath("../Target")
+rootPos = NodePath("../Skeleton3D/Root")
+enabled = true
