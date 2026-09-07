@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bttlrgxq7spag"]
 
-[ext_resource type="Script" uid="uid://biojooukkp0wk" path="res://skeleDebug.cs" id="1_3n60p"]
-[ext_resource type="Script" uid="uid://cuw3s60gb1agb" path="res://Fabriklegchain.cs" id="2_sgntq"]
-[ext_resource type="Script" uid="uid://cfycx40x11t7e" path="res://pole_position.gd" id="3_w83f7"]
+[ext_resource type="Script" uid="uid://biojooukkp0wk" path="res://MainScripts/skeleDebug.cs" id="1_3n60p"]
+[ext_resource type="Script" uid="uid://cuw3s60gb1agb" path="res://MainScripts/Fabriklegchain.cs" id="2_sgntq"]
+[ext_resource type="Script" uid="uid://cfycx40x11t7e" path="res://SpiderScripts/pole_position.gd" id="3_w83f7"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_w83f7"]
 cull_mode = 2

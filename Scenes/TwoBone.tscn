@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cdqs5d61klnrw"]
 
-[ext_resource type="Script" uid="uid://biojooukkp0wk" path="res://skeleDebug.cs" id="1_wq5cj"]
+[ext_resource type="Script" uid="uid://biojooukkp0wk" path="res://MainScripts/skeleDebug.cs" id="1_wq5cj"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_wq5cj"]
 cull_mode = 2

@@ -8,8 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#position += Vector3(1,0,1) * delta
-	rotation_degrees.y += 10 * delta
+	position += Vector3(1,0,1) * delta
+	#rotation_degrees.y += 10 * delta
 	var avgY = 0
 	for i in feet:
 		avgY += i.global_position.y

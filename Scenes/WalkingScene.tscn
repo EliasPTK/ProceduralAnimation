@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://de0poysypexuv"]
 
-[ext_resource type="PackedScene" uid="uid://d1hybyo1fpsnb" path="res://Spider.tscn" id="1_073ix"]
-[ext_resource type="Script" uid="uid://cuw3s60gb1agb" path="res://Fabriklegchain.cs" id="2_bjojg"]
+[ext_resource type="PackedScene" uid="uid://d1hybyo1fpsnb" path="res://Scenes/Spider.tscn" id="1_073ix"]
+[ext_resource type="Script" uid="uid://cuw3s60gb1agb" path="res://MainScripts/Fabriklegchain.cs" id="2_bjojg"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_81qoi"]
 
