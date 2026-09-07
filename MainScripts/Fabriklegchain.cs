@@ -93,7 +93,7 @@ public partial class Fabriklegchain : Node3D
 		_solver = new Fabriksolver();
 		_solver.Initialize(GetCurrentJointPositions());
 		_resolved = true;
-		GD.Print($"[{Name}] TryResolve: succeeded.");
+		//GD.Print($"[{Name}] TryResolve: succeeded.");
 	}
 
 	// Reads each bone's current global position, ignoring IK
@@ -106,6 +106,8 @@ public partial class Fabriklegchain : Node3D
 			positions[i] = _skeleton.GetBoneGlobalPoseNoOverride(_boneIndices[i]).Origin;
 		return positions;
 	}
+
+	private int _debugFrameCount = 0;
 
 	public override void _Process(double delta)
 	{
@@ -120,28 +122,31 @@ public partial class Fabriklegchain : Node3D
 				return;
 		}
 
-		// Same reasoning as in TryResolve: valid references can still be
-		// momentarily out of the tree (editor paste/undo/duplicate), and
-		// querying global transforms in that state spams is_inside_tree
-		// warnings instead of throwing, so skip the frame instead.
 		if (!IsInsideTree() || !_skeleton.IsInsideTree() || !_target.IsInsideTree())
 			return;
 
 		Vector3[] currentPositions = GetCurrentJointPositions();
 
-		// Re-initializes the solver each frame
 		_solver.Initialize(currentPositions);
 
-		//Converts globaltransform of target position into local transform relative to the skeleton
 		Vector3 targetInSkeletonSpace = _skeleton.GlobalTransform.AffineInverse() * _target.GlobalPosition;
 		_solver.Solve(targetInSkeletonSpace);
-		
+
 		if(pole != null && IsInstanceValid(pole) && pole.IsInsideTree())
 		{
 			Vector3 poleInSkeletonSpace = _skeleton.GlobalTransform.AffineInverse() * pole.GlobalPosition;
 			PullCurveToMagnet(_solver.Joints, poleInSkeletonSpace);
 		}
 
+		// TEMPORARY DEBUG: prints once every ~60 frames so we can confirm
+		// _Process is actually ticking and see live computed values without
+		// flooding the console. Remove once the freeze is diagnosed.
+		_debugFrameCount++;
+		if (_debugFrameCount % 60 == 0)
+		{
+			int tipIndex = _solver.Joints.Length - 1;
+			//GD.Print($"[{Name}] frame={_debugFrameCount} targetLocal={targetInSkeletonSpace} solvedTip={_solver.Joints[tipIndex]}");
+		}
 
 		ApplyToSkeleton(currentPositions, _solver.Joints);
 	}
@@ -165,7 +170,20 @@ public partial class Fabriklegchain : Node3D
 				continue;
 
 			//change in rot
-			Quaternion deltaRotation = new Quaternion(oldDirection, newDirection);
+			Quaternion deltaRotation;
+			float directionDot = oldDirection.Dot(newDirection);
+			if (directionDot < -0.9999f)
+			{
+				
+				Vector3 arbitraryAxis = Mathf.Abs(oldDirection.Dot(Vector3.Up)) < 0.99f
+					? oldDirection.Cross(Vector3.Up).Normalized()
+					: oldDirection.Cross(Vector3.Right).Normalized();
+				deltaRotation = new Quaternion(arbitraryAxis, Mathf.Pi);
+			}
+			else
+			{
+				deltaRotation = new Quaternion(oldDirection, newDirection);
+			}
 
 			//Fun little math fact, the reason we dont set the rotation of the bone just directly
 			//to the new direction is because both the old direction, and new direction dont care/know
@@ -177,8 +195,13 @@ public partial class Fabriklegchain : Node3D
 			Quaternion currentRotation = _skeleton.GetBoneGlobalPoseNoOverride(_boneIndices[i]).Basis.GetRotationQuaternion();
 			Quaternion newRotation = deltaRotation * currentRotation;
 
-			Transform3D newPose = new Transform3D(new Basis(newRotation), solvedPositions[i]);
+			Vector3 originalScale = _skeleton.GetBoneGlobalPoseNoOverride(_boneIndices[i]).Basis.Scale;
+			Basis newBasis = new Basis(newRotation).Scaled(originalScale);
+			Transform3D newPose = new Transform3D(newBasis, solvedPositions[i]);
 			_skeleton.SetBoneGlobalPoseOverride(_boneIndices[i], newPose, 1.0f, true);
+			//if(i == 0){
+			//	GD.Print($"root captured={oldPositions[0]} solved={solvedPositions[0]} actualAfterSet={_skeleton.GetBoneGlobalPose(_boneIndices[0]).Origin}");
+			//}
 		}
 
 		// Tip bone should just point at target

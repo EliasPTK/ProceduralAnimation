@@ -4,20 +4,20 @@
 [ext_resource type="Script" uid="uid://biojooukkp0wk" path="res://MainScripts/skeleDebug.cs" id="2_c75xg"]
 [ext_resource type="Script" uid="uid://cfycx40x11t7e" path="res://SpiderScripts/pole_position.gd" id="3_yvvqh"]
 
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_yvvqh"]
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_w4je0"]
 cull_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_m1ser"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_llb6u"]
 _surfaces = [{
-"aabb": AABB(-0.078, -0.07808166, -0.021210931, 0.15600002, 0.15619352, 0.060462177),
-"attribute_data": PackedByteArray("f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//"),
+"aabb": AABB(-0.07799998, 3.5863907, -0.031474955, 0.15600055, 2.2602265, 3.2396612),
+"attribute_data": PackedByteArray("/xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn/w0lJ/8NJSf/DSUn/w0lJ/8NJSf/DSUn/w0lJ/8NJSf/DSUn/w0lJ/8NJSf/DSUn/w0lJ/8NJSf/DSUn/w0lJ/8NJSf/DSUn/w0lJ/8NJSf/DSUn/w0lJ/8NJSf/DSUn/"),
 "format": 34359738377,
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 72,
-"vertex_data": PackedByteArray("hpGApZY+q7jqxSA9ZRT9L6eTnz2j9BA9d76fPRc+q7ig9BA9hpGApZY+q7jqxSA9d76fvRc+q7ic9BA9ZRT9L6eTnz2j9BA9hpGApZY+q7jqxSA9BRX9L0fpn72Z9BA9d76fvRc+q7ic9BA9hpGApZY+q7jqxSA9d76fPRc+q7ig9BA9BRX9L0fpn72Z9BA99SweMR08q7jbXqM8d76fPRc+q7ig9BA9ZRT9L6eTnz2j9BA99SweMR08q7jbXqM8ZRT9L6eTnz2j9BA9d76fvRc+q7ic9BA99SweMR08q7jbXqM8d76fvRc+q7ic9BA9BRX9L0fpn72Z9BA99SweMR08q7jbXqM8BRX9L0fpn72Z9BA9d76fPRc+q7ig9BA99SweMR08q7jbXqM8EJc6MX6jnz2NuoY8d76fPQ15TbhWqIE89SweMR08q7jbXqM8d76fvQ15TbhMqIE8EJc6MX6jnz2NuoY89SweMR08q7jbXqM87KZEMdzWn70qLHk8d76fvQ15TbhMqIE89SweMR08q7jbXqM8d76fPQ15TbhWqIE87KZEMdzWn70qLHk8kbOiMdNBqzgAOya6d76fPQ15TbhWqIE8EJc6MX6jnz2NuoY8kbOiMdNBqzgAOya6EJc6MX6jnz2NuoY8d76fvQ15TbhMqIE8kbOiMdNBqzgAOya6d76fvQ15TbhMqIE87KZEMdzWn70qLHk8kbOiMdNBqzgAOya67KZEMdzWn70qLHk8d76fPQ15TbhWqIE8kbOiMdNBqzgAOya6nuiwMR35nz2aWIe7eL6fPWvB7zh2oZu7kbOiMdNBqzgAOya6dr6fvWvB7zieoZu7nuiwMR35nz2aWIe7kbOiMdNBqzgAOya6jPC1MT2Bn7166q+7dr6fvWvB7zieoZu7kbOiMdNBqzgAOya6eL6fPWvB7zh2oZu7jPC1MT2Bn7166q+7p1D2MfNvgDmMwq28eL6fPWvB7zh2oZu7nuiwMR35nz2aWIe7p1D2MfNvgDmMwq28nuiwMR35nz2aWIe7dr6fvWvB7zieoZu7p1D2MfNvgDmMwq28dr6fvWvB7zieoZu7jPC1MT2Bn7166q+7p1D2MfNvgDmMwq28jPC1MT2Bn7166q+7eL6fPWvB7zh2oZu7")
+"vertex_data": PackedByteArray("XuPIqDk1e0AryAU8er6fPcnmiUB+BD09QEqwMqIlikDi6wC9XuPIqDk1e0AryAU8QEqwMvCniUBvev09er6fPcnmiUB+BD09XuPIqDk1e0AryAU8dL6fvcnmiUB+BD09QEqwMvCniUBvev09XuPIqDk1e0AryAU8QEqwMqIlikDi6wC9dL6fvcnmiUB+BD093lzcM30Xu0CT00o+QEqwMqIlikDi6wC9er6fPcnmiUB+BD093lzcM30Xu0CT00o+er6fPcnmiUB+BD09QEqwMvCniUBvev093lzcM30Xu0CT00o+QEqwMvCniUBvev09dL6fvcnmiUB+BD093lzcM30Xu0CT00o+dL6fvcnmiUB+BD09QEqwMqIlikDi6wC93lzcM30Xu0CT00o+A7pQNDiMukCz2R0/Xb6fvcQduEDCVhk/3lzcM30Xu0CT00o+kb6fPcQduEDCVhk/A7pQNDiMukCz2R0/3lzcM30Xu0CT00o+gW1INFCvtUDR0xQ/kb6fPcQduEDCVhk/3lzcM30Xu0CT00o+Xb6fvcQduEDCVhk/gW1INFCvtUDR0xQ/Q4oRNeE2rECN9wxAXb6fvcQduEDCVhk/A7pQNDiMukCz2R0/Q4oRNeE2rECN9wxAA7pQNDiMukCz2R0/kb6fPcQduEDCVhk/Q4oRNeE2rECN9wxAkb6fPcQduEDCVhk/gW1INFCvtUDR0xQ/Q4oRNeE2rECN9wxAgW1INFCvtUDR0xQ/Xb6fvcQduEDCVhk/Q4oRNeE2rECN9wxAX/sdNbPxoUCYMR5AKr6fvXK5oECg1hlAQ4oRNeE2rECN9wxAxL6fPXK5oECg1hlAX/sdNbPxoUCYMR5AQ4oRNeE2rECN9wxA07AXNTGBn0CoexVAxL6fPXK5oECg1hlAQ4oRNeE2rECN9wxAKr6fvXK5oECg1hlA07AXNTGBn0CoexVAcwVANW2HZUDsUk1AKr6fvXK5oECg1hlAX/sdNbPxoUCYMR5AcwVANW2HZUDsUk1AX/sdNbPxoUCYMR5AxL6fPXK5oECg1hlAcwVANW2HZUDsUk1AxL6fPXK5oECg1hlA07AXNTGBn0CoexVAcwVANW2HZUDsUk1A07AXNTGBn0CoexVAKr6fvXK5oECg1hlA")
 }]
 
 [node name="Node3D" type="Node3D" unique_id=2124933044]
@@ -63,9 +63,9 @@ pole = NodePath("../../Pole")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Skeleton3D" unique_id=2127408353 node_paths=PackedStringArray("TargetSkeleton")]
 transform = Transform3D(0.010000002, 0, 0, 0, -4.3711396e-10, -0.010000003, 0, 0.010000003, -4.3711396e-10, 0, 0, 0)
-material_override = SubResource("ORMMaterial3D_yvvqh")
-custom_aabb = AABB(-2, -2.0000815, -2.021211, 4, 4.0003266, 4.060462)
-mesh = SubResource("ArrayMesh_m1ser")
+material_override = SubResource("ORMMaterial3D_w4je0")
+custom_aabb = AABB(-2, -2, -2, 4.000001, 9.846617, 7.208186)
+mesh = SubResource("ArrayMesh_llb6u")
 script = ExtResource("2_c75xg")
 TargetSkeleton = NodePath("..")
 BoneBaseWidth = 0.078
@@ -74,10 +74,10 @@ BoneBaseWidth = 0.078
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.259559e-06, 0.039414674)
 
 [node name="Target" type="Node3D" parent="." unique_id=320828973]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 1.9764068, 3.86896)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1525574e-07, 3.5851853, 3.2071261)
 
 [node name="Pole" type="Node3D" parent="." unique_id=1988305380 node_paths=PackedStringArray("targetPos", "rootPos")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 8.941467, 3.86896)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1525574e-07, 8.941467, 3.2071261)
 script = ExtResource("3_yvvqh")
 targetPos = NodePath("../Target")
 rootPos = NodePath("../Skeleton3D/Root")
