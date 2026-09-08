@@ -1,0 +1,191 @@
+[gd_scene format=4 uid="uid://dt8pbjp0vcq16"]
+
+[ext_resource type="Script" uid="uid://f4vgrxddojc7" path="res://Fish/FishSpineIK.cs" id="1_c8bvx"]
+[ext_resource type="Script" uid="uid://clkcjmwn77spq" path="res://Fish/fish_generator.gd" id="1_cj6il"]
+[ext_resource type="Script" uid="uid://biojooukkp0wk" path="res://MainScripts/skeleDebug.cs" id="3_bq4tn"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_bq4tn"]
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qgy5m"]
+_surfaces = [{
+"aabb": AABB(-0.17534025, 0.004053399, 2.6096404, 0.17005107, 4.3859134, 3.2132194),
+"attribute_data": PackedByteArray("/xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn//xkZ//8ZGf//GRn/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/5S0t/+UtLf/lLS3/"),
+"format": 34359738377,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 456,
+"vertex_data": PackedByteArray("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")
+}]
+
+[node name="FishGenerator" type="Node3D" unique_id=480579689 node_paths=PackedStringArray("ik_node")]
+script = ExtResource("1_cj6il")
+bone_lengths = Array[float]([0.5, 0.5, 0.5, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.3, 0.3, 0.3, 0.3, 0.3, 0.2, 0.2, 0.2, 0.2])
+ik_node = NodePath("FishIK")
+
+[node name="FishSkeleton" type="Skeleton3D" parent="." unique_id=1218549791]
+visible = false
+bones/0/name = "Spine_00"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+bones/0/enabled = true
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "Spine_01"
+bones/1/parent = 0
+bones/1/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+bones/1/enabled = true
+bones/1/position = Vector3(0, 0, 0.5)
+bones/1/rotation = Quaternion(0, 0, 0, 1)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/name = "Spine_02"
+bones/2/parent = 1
+bones/2/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+bones/2/enabled = true
+bones/2/position = Vector3(0, 0, 0.5)
+bones/2/rotation = Quaternion(0, 0, 0, 1)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/name = "Spine_03"
+bones/3/parent = 2
+bones/3/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+bones/3/enabled = true
+bones/3/position = Vector3(0, 0, 0.5)
+bones/3/rotation = Quaternion(0, 0, 0, 1)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/name = "Spine_04"
+bones/4/parent = 3
+bones/4/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+bones/4/enabled = true
+bones/4/position = Vector3(0, 0, 0.4)
+bones/4/rotation = Quaternion(0, 0, 0, 1)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/name = "Spine_05"
+bones/5/parent = 4
+bones/5/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+bones/5/enabled = true
+bones/5/position = Vector3(0, 0, 0.4)
+bones/5/rotation = Quaternion(0, 0, 0, 1)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/name = "Spine_06"
+bones/6/parent = 5
+bones/6/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+bones/6/enabled = true
+bones/6/position = Vector3(0, 0, 0.4)
+bones/6/rotation = Quaternion(0, 0, 0, 1)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/name = "Spine_07"
+bones/7/parent = 6
+bones/7/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+bones/7/enabled = true
+bones/7/position = Vector3(0, 0, 0.4)
+bones/7/rotation = Quaternion(0, 0, 0, 1)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/name = "Spine_08"
+bones/8/parent = 7
+bones/8/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+bones/8/enabled = true
+bones/8/position = Vector3(0, 0, 0.4)
+bones/8/rotation = Quaternion(0, 0, 0, 1)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/name = "Spine_09"
+bones/9/parent = 8
+bones/9/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+bones/9/enabled = true
+bones/9/position = Vector3(0, 0, 0.4)
+bones/9/rotation = Quaternion(0, 0, 0, 1)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/name = "Spine_10"
+bones/10/parent = 9
+bones/10/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+bones/10/enabled = true
+bones/10/position = Vector3(0, 0, 0.4)
+bones/10/rotation = Quaternion(0, 0, 0, 1)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/name = "Spine_11"
+bones/11/parent = 10
+bones/11/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+bones/11/enabled = true
+bones/11/position = Vector3(0, 0, 0.4)
+bones/11/rotation = Quaternion(0, 0, 0, 1)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/name = "Spine_12"
+bones/12/parent = 11
+bones/12/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+bones/12/enabled = true
+bones/12/position = Vector3(0, 0, 0.3)
+bones/12/rotation = Quaternion(0, 0, 0, 1)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/name = "Spine_13"
+bones/13/parent = 12
+bones/13/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+bones/13/enabled = true
+bones/13/position = Vector3(0, 0, 0.3)
+bones/13/rotation = Quaternion(0, 0, 0, 1)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/name = "Spine_14"
+bones/14/parent = 13
+bones/14/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+bones/14/enabled = true
+bones/14/position = Vector3(0, 0, 0.3)
+bones/14/rotation = Quaternion(0, 0, 0, 1)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/name = "Spine_15"
+bones/15/parent = 14
+bones/15/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+bones/15/enabled = true
+bones/15/position = Vector3(0, 0, 0.3)
+bones/15/rotation = Quaternion(0, 0, 0, 1)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/name = "Spine_16"
+bones/16/parent = 15
+bones/16/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+bones/16/enabled = true
+bones/16/position = Vector3(0, 0, 0.3)
+bones/16/rotation = Quaternion(0, 0, 0, 1)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/name = "Spine_17"
+bones/17/parent = 16
+bones/17/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
+bones/17/enabled = true
+bones/17/position = Vector3(0, 0, 0.2)
+bones/17/rotation = Quaternion(0, 0, 0, 1)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/name = "Spine_18"
+bones/18/parent = 17
+bones/18/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
+bones/18/enabled = true
+bones/18/position = Vector3(0, 0, 0.2)
+bones/18/rotation = Quaternion(0, 0, 0, 1)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/name = "Spine_19"
+bones/19/parent = 18
+bones/19/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
+bones/19/enabled = true
+bones/19/position = Vector3(0, 0, 0.2)
+bones/19/rotation = Quaternion(0, 0, 0, 1)
+bones/19/scale = Vector3(1, 1, 1)
+
+[node name="FishIK" type="Node3D" parent="." unique_id=1603763118]
+transform = Transform3D(0.9929498, -0.0126626445, -0.11785749, -0.00094263535, 0.99340284, -0.114673205, 0.11853204, 0.11397583, 0.9863872, -0.062020417, 4.389969, 3.8197281)
+script = ExtResource("1_c8bvx")
+SkeletonPath = NodePath("../FishSkeleton")
+BoneNames = PackedStringArray("Spine_00", "Spine_01", "Spine_02", "Spine_03", "Spine_04", "Spine_05", "Spine_06", "Spine_07", "Spine_08", "Spine_09", "Spine_10", "Spine_11", "Spine_12", "Spine_13", "Spine_14", "Spine_15", "Spine_16", "Spine_17", "Spine_18", "Spine_19")
+TargetPath = NodePath("../Node3D")
+MoveSpeed = 6.0
+TurnSpeed = 8.0
+
+[node name="Node3D" type="Node3D" parent="." unique_id=2120734686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7683716e-07, 4.4315424, 3.3253345)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2118736114 node_paths=PackedStringArray("TargetSkeleton")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000004, 7.549794e-08, 0, -7.549794e-08, 1.0000004, 0.05945623, 0, 0.14008117)
+material_override = SubResource("ORMMaterial3D_bq4tn")
+custom_aabb = AABB(-2.1214767, -2, -2, 4.1214767, 8.389967, 9.82286)
+mesh = SubResource("ArrayMesh_qgy5m")
+skeleton = NodePath("../Skeleton3D")
+script = ExtResource("3_bq4tn")
+TargetSkeleton = NodePath("../FishSkeleton")
+BoneBaseWidth = 0.055

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [Tool]
 public partial class skeleDebug : MeshInstance3D
 {
-	private Skeleton3D _targetSkeleton;
+	protected Skeleton3D _targetSkeleton;
 
 	[Export]
 	public Skeleton3D TargetSkeleton
@@ -28,8 +28,8 @@ public partial class skeleDebug : MeshInstance3D
 	[Export] public float MaxPositionDistance { get; set; } = 0.5f;
 	[Export] public float MaxRotationAngle { get; set; } = 1.5708f;
 
-	private ArrayMesh _arrayMesh;
-	private OrmMaterial3D _debugMaterial;
+	protected ArrayMesh _arrayMesh;
+	protected OrmMaterial3D _debugMaterial;
 
 	public override void _Ready()
 	{
@@ -91,7 +91,7 @@ public partial class skeleDebug : MeshInstance3D
 		}
 	}
 
-	private void InitializeResources()
+	protected void InitializeResources()
 	{
 		if (!IsInstanceValid(this)) return;
 
@@ -154,7 +154,7 @@ public partial class skeleDebug : MeshInstance3D
 		RedrawSkeletonBones();
 	}
 
-	private void RedrawSkeletonBones()
+	protected virtual void RedrawSkeletonBones()
 	{
 		InitializeResources();
 
@@ -237,7 +237,7 @@ public partial class skeleDebug : MeshInstance3D
 		CustomAabb = customBounds.Grow(2.0f);
 	}
 
-	private static void AddConeBone(SurfaceTool st, Vector3 start, Vector3 end, float baseWidth, Color color)
+	protected static void AddConeBone(SurfaceTool st, Vector3 start, Vector3 end, float baseWidth, Color color)
 	{
 		Vector3 dir = end - start;
 		float boneLength = dir.Length();
