@@ -16,6 +16,23 @@ public partial class FishSpineIK : Node3D
 	[Export] public float TurnSpeed = 4.0f;
 	[Export] public float StoppingDistance = 0.5f;
 
+	[ExportGroup("Ground Adaptation")]
+	// Turns
+	// the spine from a free-swimming fish into a ground-hugging "snake" that
+	// conforms to terrain, arcing over gaps it can't reach.
+	[Export] public bool EnableGroundAdaptation = false;
+	// Percentage of bones that need to be grounded.
+	[Export(PropertyHint.Range, "0,1,0.05")] public float GroundedPercent = 0.6f;
+	[Export] public bool GroundAdaptHead = true;
+	[Export] public float GroundRayUpOffset = 1.0f;
+	[Export] public float GroundRayDownDistance = 3.0f;
+	[Export(PropertyHint.Layers3DPhysics)] public uint GroundCollisionMask = 1;
+	[Export] public float GroundSurfaceOffset = 0.05f;
+	[Export(PropertyHint.Range, "0,30,0.5")] public float GroundSnapSpeed = 10.0f;
+	[Export(PropertyHint.Range, "1,5,1")] public int GroundRelaxIterations = 2;
+
+	public float CurrentGroundedRatio { get; private set; } = 0f;
+
 	[ExportToolButton("Reset IK")]
 	public Callable ResetButton => Callable.From(ResetIK);
 
@@ -26,9 +43,13 @@ public partial class FishSpineIK : Node3D
 	private Vector3[] _positions = Array.Empty<Vector3>(); // Local skeleton space
 	private bool _initialized = false;
 
+	private bool[] _groundHitMask = Array.Empty<bool>();
+	private Vector3[] _groundHitPoints = Array.Empty<Vector3>();
+
 	public override void _Ready()
 	{
 		CallDeferred(nameof(Initialize));
+		CallDeferred(nameof(ResetIK));
 	}
 
 	public override void _ExitTree()
@@ -142,6 +163,12 @@ public partial class FishSpineIK : Node3D
 			_positions[i] = prev + (dir * _boneLengths[i - 1]);
 		}
 
+		// 2.5 GROUND ADAPTATION
+		if (EnableGroundAdaptation && !Engine.IsEditorHint())
+		{
+			ApplyGroundAdaptation((float)delta);
+		}
+
 		// 3. Apply positions & rotations to Skeleton
 		for (int i = 0; i < _boneIndices.Length - 1; i++)
 		{
@@ -163,6 +190,81 @@ public partial class FishSpineIK : Node3D
 			int last = _boneIndices.Length - 1;
 			Transform3D lastPose = new Transform3D(Basis.Identity, _positions[last]);
 			_skeleton.SetBoneGlobalPoseOverride(_boneIndices[last], lastPose, 1.0f, true);
+		}
+	}
+
+	// Bends the rigid chain toward the ground wherever ground is reachable,
+	// leaving joints over a gap alone so they arc between their grounded
+	// neighbors instead of clipping underground or stretching the chain.
+	private void ApplyGroundAdaptation(float delta)
+	{
+		var spaceState = GetWorld3D().DirectSpaceState;
+		int count = _positions.Length;
+
+		if (_groundHitMask.Length != count)
+		{
+			_groundHitMask = new bool[count];
+			_groundHitPoints = new Vector3[count];
+		}
+
+		// 1. Raycast every joint straight down to find candidate ground height.
+		int groundableCount = 0;
+		int startIndex = GroundAdaptHead ? 0 : 1;
+		for (int i = 0; i < count; i++)
+		{
+			if (i < startIndex)
+			{
+				_groundHitMask[i] = false;
+				continue;
+			}
+
+			Vector3 worldPos = _skeleton.GlobalTransform * _positions[i];
+			Vector3 rayFrom = worldPos + Vector3.Up * GroundRayUpOffset;
+			Vector3 rayTo = worldPos - Vector3.Up * GroundRayDownDistance;
+
+			var query = PhysicsRayQueryParameters3D.Create(rayFrom, rayTo);
+			query.CollisionMask = GroundCollisionMask;
+
+			var hit = spaceState.IntersectRay(query);
+			if (hit.Count > 0)
+			{
+				_groundHitMask[i] = true;
+				_groundHitPoints[i] = (Vector3)hit["position"];
+				groundableCount++;
+			}
+			else
+			{
+				_groundHitMask[i] = false;
+			}
+		}
+
+		CurrentGroundedRatio = count > 0 ? (float)groundableCount / count : 0f;
+		
+
+		// 2. Pull every groundable joint's height toward its hit point,
+		//    then re-enforce rigid bone lengths so the nudge doesn't stretch
+		//    the chain. Kinda like Fabrik again, but not really.
+		for (int iter = 0; iter < GroundRelaxIterations; iter++)
+		{
+			for (int i = 0; i < count; i++)
+			{
+				if (!_groundHitMask[i]) continue;
+
+				Vector3 worldPos = _skeleton.GlobalTransform * _positions[i];
+				float targetY = _groundHitPoints[i].Y + GroundSurfaceOffset;
+				float weight = Mathf.Clamp(GroundSnapSpeed * delta, 0f, 1f);
+				worldPos.Y = Mathf.Lerp(worldPos.Y, targetY, weight);
+				_positions[i] = _skeleton.GlobalTransform.AffineInverse() * worldPos;
+			}
+
+			for (int i = 1; i < count; i++)
+			{
+				Vector3 prev = _positions[i - 1];
+				Vector3 curr = _positions[i];
+				Vector3 dir = (curr - prev).Normalized();
+				if (dir.IsZeroApprox()) dir = Vector3.Back;
+				_positions[i] = prev + (dir * _boneLengths[i - 1]);
+			}
 		}
 	}
 
