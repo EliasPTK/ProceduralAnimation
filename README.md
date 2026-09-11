@@ -23,7 +23,7 @@ https://github.com/user-attachments/assets/ef2833b3-4bd2-4334-a588-dce0369d30ce
 ## Fish Movement - In Progress
 As of this commit fish spines can be generated based on a list of bone lengths. All aspects of fish IK work in editor, they will move towards the target Node. IK creatures with larger amounts of small bones better resemble serpents and will be used in later development for that purpose.
 
-Next steps will be a more complex spine movement system, applying a sine wave to simulate how fix naturally move. Other future paths will include a serpent mode forcing a percentage of the length IK creature to be grounded at all times. 
+Next steps will be a more complex spine movement system, applying a sin wave to simulate how fix naturally move.
 
 ### Fish Basic Movement
 https://github.com/user-attachments/assets/6e8d29e0-c3d2-4848-8003-efac0173e3ae
@@ -31,7 +31,16 @@ https://github.com/user-attachments/assets/6e8d29e0-c3d2-4848-8003-efac0173e3ae
 ### Sea Snake Basic Movement
 https://github.com/user-attachments/assets/972ff9a1-e5b7-4cf9-bf7e-e7908032b7cc
 
-## Humanoid Movement - Very In Progress
+## Snake Movement - Very In Progress
+As of this commit there is now an optional mode in the fish spine IK to enable a grounding mode, forcing a percentage of the IK creatures bones to be grounded at a time. This forces snake like movement to some degree. This mode is the most in progress as it currently has issues with bones clipping and odd head rotation. 
+
+Future development will focus on resolving these base issues and then will work on applying the sin wave to both fish and snakes. 
+
+### Grounded Snake Basic Movement]
+https://github.com/user-attachments/assets/488b6726-11c8-463d-ad85-a6aaee8b0eaa
+
+
+## Humanoid Movement - In Progress
 As of this commit humanoid walk cycles are now working. It uses a similar leg Ik as the spider but rotates the target points to simulate the location of the feet during a walk cycle. The speed of the humanoid is synced to the rotational speed of their feet target positions.
 
 Next steps will be fine tuning the movement, adding moving arm IK that can grab/reach for nearby colliders and a look-at structure for heads taking into account neck twist amounts.
