@@ -43,13 +43,26 @@ https://github.com/user-attachments/assets/488b6726-11c8-463d-ad85-a6aaee8b0eaa
 ## Humanoid Movement - In Progress
 As of this commit humanoid walk cycles are now working. It uses a similar leg Ik as the spider but rotates the target points to simulate the location of the feet during a walk cycle. The speed of the humanoid is synced to the rotational speed of their feet target positions.
 
-Next steps will be fine tuning the movement, adding moving arm IK that can grab/reach for nearby colliders and a look-at structure for heads taking into account neck twist amounts.
+The arms of the humanoids use the same Fabrik IK solvers as the legs but use a much more complicated pole system so that no matter the rotation the elbows are facing the correct way. This complex pole variant could easily be used for the legs in all modes but would likely be an over-complication for them.
+
+The head of the humanoids use a very simple look at IK structure which limits the amount the head/neck can turn to look at the target.  
+
+Next steps will be fine tuning the movement further.
 
 ### Human Walk Cycle
 https://github.com/user-attachments/assets/c644e8ab-9b24-4f9b-b112-4b842ef6800b
 
 ### Human Basic Movement
 https://github.com/user-attachments/assets/80e213a3-ece5-44b7-9ce0-64f4ae96a3fb
+
+### Human Arm Basic Movement
+https://github.com/user-attachments/assets/835a204b-6dd1-44c6-b585-83a4ef1039c5
+
+### Human Head Basic Movement
+https://github.com/user-attachments/assets/2db49cdf-9845-4d92-8fee-b981e0153196
+
+
+
 
 
 
