@@ -2,7 +2,13 @@
 
 Multiple of my recent projects have required the usage of IK. While the inverse kinematics currently present in Godot are very impressive I found that they either over complicated or did not correctly work for my needs. As a result I implemented a Fabrik IK solver myself that I could more easily fine tune.
 
-As a part of that process this repository also contains a few debug/visual aid tools including a skeleton debug draw tool.
+As a part of that process this repository also contains a few debug/visual aid tools including two different skeleton debug draw tool.
+
+## Positional Draw
+This debug mode draws all of the bones in both the editor and in the game view and then colors them on a Gray-Red gradient based on their distance to their rest pose.
+
+## Velocity Draw
+This debug mode draws all of the bones in both the editor and in the game view and then colors them on a Blue-Gray-Red gradient based on their velocity. The faster they are returning to their rest pose, the more blue they are and the faster they are moving away the more red they are. 
 
 # Current Progress
 
